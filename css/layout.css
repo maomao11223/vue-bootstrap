@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wrap-main {
+  flex-grow: 1;
+  overflow: auto;
+  height: 100%;
+}
+
+.wrap-footer {
+  margin-top: 16px;
+}/*# sourceMappingURL=layout.css.map */

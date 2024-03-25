@@ -1,0 +1,22 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wrap-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wrap-header {}
+
+.wrap-main {
+    flex-grow: 1;
+    overflow: auto;
+    height: 100%;
+    // padding: 16px;
+}
+
+.wrap-footer {
+    margin-top: 16px;
+}
