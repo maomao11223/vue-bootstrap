@@ -31,7 +31,7 @@ const group = ref([{
 }])
 </script>
 <template>
-    <div style="background-color:#EDF1F5">
+    <div style="" class="home-page">
         <div class="bg-image"></div>
         <div
             class="position-relative"
@@ -190,76 +190,3 @@ const group = ref([{
         </div>
     </div>
 </template>
-<style
-    lang="scss"
-    scoped
->
-.light-green-btn {
-    background-color: #c8ff8c;
-}
-
-.bg-image {
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 880px;
-    background-image: url('../assets/icons/image_background.svg');
-    background-position: 52% 60%;
-    background-size: cover;
-
-    @media screen and (min-width:1200px) {
-        left: 0;
-    }
-}
-
-.border-custom {
-    border-bottom: 1px solid #21364E;
-
-    @media screen and (min-width:768px) {
-        border-right: 1px solid #21364E;
-    }
-}
-
-.drop-custom {
-    position: absolute;
-    bottom: -5%;
-    right: 45%;
-
-    filter: drop-shadow(10px 10px 20px #0000001A);
-
-    @media screen and (min-width:768px) {
-        bottom: -10%;
-        right: 47%;
-    }
-
-    @media screen and (min-width:992px) {
-        bottom: -20%;
-        right: 49%;
-    }
-}
-
-.paly-card-section {
-    margin-top: 300px;
-
-    @media screen and (min-width:768px) {
-        margin-top: 3rem;
-    }
-
-    .card{
-        width:346px;
-        @media screen and (min-width:992px) {
-            width:576px;
-            
-        }
-    }
-
-    .card-image {
-        border-radius: 30px 30px 0 0 !important;
-        height: 416px;
-        background-image: url('@/assets/icons/image_item.svg');
-        background-size: cover;
-        background-position: center;;
-    }
-}
-</style>

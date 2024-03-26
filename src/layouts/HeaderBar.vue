@@ -13,7 +13,7 @@ const isMobile = $global.tools.isMobile(); // 手機板
 </script>
 
 <template>
-	<nav class="d-flex w-100 justify-content-center">
+	<nav class="d-flex w-100 justify-content-center nav-bar">
 		<div
 			class="navbar navbar-expand-lg p-0 position-absolute top-0 z-3 mx-auto"
 			style="width: -webkit-fill-available; background-color: transparent;max-width:1200px"
@@ -61,15 +61,4 @@ const isMobile = $global.tools.isMobile(); // 手機板
 		</div>
 	</nav>
 </template>
-<style scope>
-.signUp-btn {
-	/* UI Properties */
-	border: 1px solid #FFFFFF4B;
-	border-radius: 30px;
-	opacity: 1;
-	color: white;
-	background-color: transparent;
-	padding: 12px 40px;
-	margin-right: 14px;
-}
-</style>
+<style scope></style>

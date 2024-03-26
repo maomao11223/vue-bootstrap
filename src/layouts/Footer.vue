@@ -29,11 +29,10 @@ const content = ref([
         <div
             class="d-flex flex-column flex-md-row justify-content-between align-items-md-end w-100 flex-wrap"
             style="max-width:1200px"
-            
         >
             <div
                 class="col-auto col-md-6 d-flex flex-column "
-                :class="{ 'justify-content-between': !isMobile ? true : false,' h-100': !isMobile ? true : false}"
+                :class="{ 'justify-content-between': !isMobile ? true : false, ' h-100': !isMobile ? true : false }"
             >
                 <p class="fs-28">HOTEL</p>
                 <div class="d-flex flex-column flex-row">
