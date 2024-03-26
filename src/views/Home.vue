@@ -1,5 +1,6 @@
 <script setup>
 import { ref, inject, onMounted } from 'vue'
+import outlineBtn from "../components/common/button/outlineBtn.vue";
 
 onMounted(() => {
     console.log(window.innerHeight)
@@ -32,10 +33,13 @@ const group = ref([{
 <template>
     <div style="background-color:#EDF1F5">
         <div class="bg-image"></div>
-        <div class="position-relative">
+        <div
+            class="position-relative"
+            style="max-width:100vw"
+        >
             <section
                 class="text-white px-2"
-                style="padding-top:120px;z-index:10"
+                style="padding-top:120px;z-index:10;height:880px"
             >
                 <div style="width:80%">
                     <p
@@ -71,16 +75,15 @@ const group = ref([{
                     ></svg-icon>
                 </div>
                 <div
-                    class="card"
-                    style="background-color:#2C4664"
+                    class="card w-100"
+                    style="background-color:#2C4664;max-width:calc(100vw - 20px)"
                 >
-                    <div class="position-relative">
+                    <div class="position-relative d-flex flex-column flex-md-row  flex-wrap">
                         <!-- 抵達/離開 -->
                         <section
                             v-for="ts in timeSet"
                             :key="ts"
-                            class="py-2 px-4 text-white "
-                            style="border-bottom:1px solid #21364E;"
+                            class="py-2 px-4 text-white col-md-6 col-lg-3 border-custom"
                         >
                             <p class="text-secondary">{{ ts.title }}</p>
                             <div class="d-flex align-items-center">
@@ -97,17 +100,14 @@ const group = ref([{
                             </div>
                         </section>
                         <!-- 成人/小孩 -->
-                        <section
-                            class="d-flex text-white"
-                            style=" border-bottom: 1px solid #21364E; "
-                        >
+                        <section class="d-flex text-white col-md-6 col-lg-3">
                             <div
-                                class="w-50 d-flex flex-column"
-                                v-for="(g, index) in group"
+                                class="w-50 d-flex flex-column border-custom py-2"
+                                v-for="g in group"
                                 :key="g"
-                                :style="{ 'border-right': index == 0 ? '1px solid #21364E;' : '' }"
+                                style="border-right:1px solid #21364E"
                             >
-                                <p class="text-secondary mx-auto mb-0">{{ g.title }}</p>
+                                <p class="text-secondary mx-auto ">{{ g.title }}</p>
                                 <div class="mx-auto d-flex align-items-center">
                                     <svg-icon
                                         name="button_minus"
@@ -126,14 +126,15 @@ const group = ref([{
                             </div>
                         </section>
                         <!-- 確認按鈕 -->
-                        <section class="w-100 d-flex py-5">
-                            <button class="mx-auto btn rounded-pill light-green-btn">CHECK AVAILABILITY</button>
+                        <section class="w-md-100  d-flex py-5 col-md-6 col-lg-3">
+                            <outlineBtn
+                                text="CHECK AVAILABILITY"
+                                class=" light-green-btn mx-auto"
+                            ></outlineBtn>
                         </section>
-
                         <!-- 下箭頭 -->
                         <svg-icon
-                            class="position-absolute   "
-                            style="bottom:-5%;right:45%;"
+                            class="drop-custom"
                             name="button_dropDown"
                             :width="48"
                             :height="48"
@@ -144,45 +145,48 @@ const group = ref([{
             </section>
 
             <section
-                style="background-color:#EDF1F5"
-                class=" px-2"
+                class=" px-2  paly-card-section d-flex flex-column flex-md-row align-items-center justify-content-between flex-wrap"
+                style="max-width:100vw"
             >
-                <p
-                    class="fs-20 mb-4 "
-                    style="line-height:1.2"
-                >Luxury Plaza<br />Hotel for You</p>
+                <div class="col-12 col-md-4">
+                    <p
+                        class="fs-20 mb-4 "
+                        style="line-height:1.2"
+                    >Luxury Plaza<br />Hotel for You</p>
 
-                <p class="fs-9 mb-4 text-secondary">Distant orb has power to raise and purify our thoughts like a strain
-                    of
-                </p>
-                <button class="btn btn-outline-secondary rounded-pill px-4 py-3">ABOUT US</button>
-            </section>
-            <section
-                class="px-2 mt-5"
-                style="padding-bottom:125px"
-            >
-                <div
-                    class="card"
-                    style="border-radius:18px;box-shadow:10px 10px 20 #0000001A "
+                    <p class="fs-9 mb-4 text-secondary">Distant orb has power to raise and purify our thoughts like a
+                        strain
+                        of
+                    </p>
+                    <outlineBtn text="ABOUT US"></outlineBtn>
+
+                </div>
+                <section
+                    class="px-2 mt-5 col-auto"
+                    style="padding-bottom:125px;z-index:10"
                 >
-                    <img
-                        src="../assets/icons/image_item.svg"
-                        class="card-img-top"
+                    <div
+                        class="card"
+                        style="border-radius:18px;box-shadow:10px 10px 20 #0000001A;border-radius:30px "
                     >
-                    <div class="card-body mt-2 d-flex align-items-center">
-                        <svg-icon
-                            class="ms-4"
-                            name="button_player"
-                            :width="80"
-                            :height="80"
-                        ></svg-icon>
-                        <div class="ms-3">
-                            <h5 class="card-title">Play video</h5>
-                            <p class="text-secondary m-0">2:34</p>
+                        <div class="card-image">
+                        </div>
+                        <div class="card-body mt-2 d-flex align-items-center">
+                            <svg-icon
+                                class="ms-4"
+                                name="button_player"
+                                :width="80"
+                                :height="80"
+                            ></svg-icon>
+                            <div class="ms-3">
+                                <h5 class="card-title">Play video</h5>
+                                <p class="text-secondary m-0">2:34</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
+
         </div>
     </div>
 </template>
@@ -202,6 +206,60 @@ const group = ref([{
     height: 880px;
     background-image: url('../assets/icons/image_background.svg');
     background-position: 52% 60%;
-    background-size:cover;
+    background-size: cover;
+
+    @media screen and (min-width:1200px) {
+        left: 0;
+    }
+}
+
+.border-custom {
+    border-bottom: 1px solid #21364E;
+
+    @media screen and (min-width:768px) {
+        border-right: 1px solid #21364E;
+    }
+}
+
+.drop-custom {
+    position: absolute;
+    bottom: -5%;
+    right: 45%;
+
+    filter: drop-shadow(10px 10px 20px #0000001A);
+
+    @media screen and (min-width:768px) {
+        bottom: -10%;
+        right: 47%;
+    }
+
+    @media screen and (min-width:992px) {
+        bottom: -20%;
+        right: 49%;
+    }
+}
+
+.paly-card-section {
+    margin-top: 300px;
+
+    @media screen and (min-width:768px) {
+        margin-top: 3rem;
+    }
+
+    .card{
+        width:346px;
+        @media screen and (min-width:992px) {
+            width:576px;
+            
+        }
+    }
+
+    .card-image {
+        border-radius: 30px 30px 0 0 !important;
+        height: 416px;
+        background-image: url('@/assets/icons/image_item.svg');
+        background-size: cover;
+        background-position: center;;
+    }
 }
 </style>

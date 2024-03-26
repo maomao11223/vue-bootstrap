@@ -35,14 +35,14 @@ const windowHeight = ref(0);
 
         <!-- 桌機板 -->
         <template v-else>
-            <div class="d-flex vh-100">
+            <div class="d-flex vh-100 position-relative">
                 <div class="h-100 w-100">
                     <!-- Header bar -->
                     <HeaderBar />
                     <!-- View -->
                     <div
-                        style="height: calc(100vh - 58px); width: 1640px;"
-                        class="mx-auto "
+                        class="mx-auto"
+                        style="max-width:1200px;width:100%"
                     >
                         <router-view></router-view>
                     </div>

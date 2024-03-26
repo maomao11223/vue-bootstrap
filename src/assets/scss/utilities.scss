@@ -1,51 +1,50 @@
-
 // 字粗細大小
 $max: 9;
 
 @for $i from 1 to $max {
-  .fw-#{$i * 100} {
-    font-weight: $i * 100 !important;
-  }
+	.fw-#{$i * 100} {
+		font-weight: $i * 100 !important;
+	}
 }
 
 // 字大小
 $max: 30;
 
 @for $i from 1 to $max {
-  .fs-#{$i} {
-    font-size: $i * 2px !important;
-  }
+	.fs-#{$i} {
+		font-size: $i * 2px !important;
+	}
 }
-
 
 // 背景色
-@each $key,
-$value in $theme-colors {
-  .bg-#{$key} {
-    background-color: $value !important;
-  }
+@each $key, $value in $theme-colors {
+	.bg-#{$key} {
+		background-color: $value !important;
+	}
 }
 
-@each $key,
-$value in $table-bgs {
-  .bg-active-#{$key} {
-    background-color: $value !important;
-  }
+@each $key, $value in $table-bgs {
+	.bg-active-#{$key} {
+		background-color: $value !important;
+	}
 }
 
 // 字顏色
-@each $key,
-$value in $theme-colors {
-  .text-#{$key} {
-    color: $value !important;
-  }
+@each $key, $value in $theme-colors {
+	.text-#{$key} {
+		color: $value !important;
+	}
 }
 
 .cursor-pointer {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .disabled {
-  pointer-events: none;
-  opacity: 0.5;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+body {
+	background-color: #edf1f5;
 }
